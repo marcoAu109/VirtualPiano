@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Virtual Piano</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="white-keys">
+        <kbd>A</kbd>
+        <kbd>S</kbd>
+        <kbd>D</kbd>
+        <kbd>F</kbd>
+        <kbd>G</kbd>
+        <kbd>H</kbd>
+        <kbd>J</kbd>
+    </div>
+    <div class="black-keys">
+        <kbd>W</kbd>
+        <kbd>E</kbd>
+        <kbd>T</kbd>
+        <kbd>Y</kbd>
+        <kbd>U</kbd>
+    </div>
+</div>
+<script>
+    document.addEventListener("keydown",(e)=>{
+        let filename = "white_keys/" + e.key +".mp3";
+        let audio = new Audio(filename);
+        if ((e.key==="A")|| (e.key==="S")||(e.key==="D")||(e.key==="F")||(e.key==="G")||(e.key==="H")||(e.key==="J")
+        ||(e.key==="W")||(e.key==="E")||(e.key==="T")||(e.key==="Y")||(e.key==="U"))
+            audio.play();
+        else
+            console.log("Warning! Please input the piano key as shown on the above!")
+    });
+</script>
+</body>
+</html>
